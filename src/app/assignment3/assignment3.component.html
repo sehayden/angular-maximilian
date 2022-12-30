@@ -1,0 +1,15 @@
+<button
+    (click) = "handleToggle()"
+>Display Details</button>
+<div *ngIf="isShow">
+    When asked why I'm crying I'll be able to answer <br/>
+    with something like tears <br/>
+    I can not keep up at all of what the meaning of it all is <br/>
+    that we met each other <br/>
+    This one body I have can not cry out enough <br/>
+    <div
+        *ngFor="let item of timeStamp"
+        [ngStyle]="{backgroundColor: timeStamp.indexOf(item) >= 5 ? 'yellow' : 'red'}"
+        [ngClass]="{'white-font': timeStamp.indexOf(item) < 5}"
+    >{{ item }}</div>
+</div>

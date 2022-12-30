@@ -1,0 +1,7 @@
+<h3>Assignment 2</h3>
+<input [(ngModel)] = username >
+<p>Welcome {{ username }}</p>
+<button
+    [disabled]="!username.trim().length"
+    (click)="handleClick()"
+>Login</button>

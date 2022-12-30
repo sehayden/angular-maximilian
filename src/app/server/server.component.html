@@ -1,0 +1,14 @@
+<p>Server with ID {{id}} is {{ getServerStatus() }}</p>
+<button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    [innerText]="allowNewServer"
+    (click)="onCreateServer()"
+>
+</button>
+<p *ngIf="allowNewServer; else noServer">{{createServerStatus}}</p>
+<ng-template #noServer>
+    <p>Wait...</p>
+</ng-template>
+<h3 [ngStyle]="{color: color}">Element: {{element}}</h3>
+<button (click)="genRandomElement()" (click)="addToEle()">Roll phase</button>
