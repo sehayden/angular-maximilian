@@ -1,0 +1,28 @@
+.electro, .anemo, .pyro, .geo, .dendro, .hydro, .cryo, .default {
+    background-color: gray;
+    height: 30px;
+    width: 30px;
+    margin: 1em;
+}
+
+.electro {
+    background-color: rgb(162, 21, 162);
+}
+.anemo {
+    background-color:rgb(84, 231, 204)
+}
+.pyro {
+    background-color:rgb(231, 84, 84)
+}
+.cryo {
+    background-color:rgb(84, 229, 255)
+}
+.geo {
+    background-color:rgb(231, 207, 84)
+}
+.dendro {
+    background-color:rgb(56, 226, 40)
+}
+.hydro {
+    background-color:rgb(58, 151, 218)
+}

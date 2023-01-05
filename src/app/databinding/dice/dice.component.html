@@ -1,0 +1,7 @@
+<app-roller
+    (elementCreated)="onElementCreated($event)"
+></app-roller>
+<app-die 
+    *ngFor="let ele of elements"
+    [element]="ele"
+></app-die>
