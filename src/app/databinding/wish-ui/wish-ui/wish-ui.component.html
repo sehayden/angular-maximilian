@@ -1,0 +1,5 @@
+<h2>Daily wish</h2>
+<button (click)="wish()" [disabled]="result == '-'">Wish</button><br/>
+<p *ngIf="result != '*' && result != '-'">{{result}}</p>
+<p *ngIf="result == '-'">No more wish for today</p>
+

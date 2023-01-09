@@ -1,4 +1,10 @@
-<app-roller
+<p appBetterHighlight [defaultColor]="'azure'" [highlightColor]="'black'">TCG Unlimited - Directives</p>
+<div [ngSwitch]="turn">
+    <p *ngSwitchCase="true">Your turn</p>
+    <p *ngSwitchCase="false">Opponent's turn</p>
+</div>
+<app-roller 
+    *appUnless="elements.length >= 7"
     (elementCreated)="onElementCreated($event)"
 ></app-roller>
 <app-die 
