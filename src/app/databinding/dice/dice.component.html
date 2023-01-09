@@ -1,13 +1,25 @@
 <p appBetterHighlight [defaultColor]="'azure'" [highlightColor]="'black'">TCG Unlimited - Directives</p>
-<div [ngSwitch]="turn">
-    <p *ngSwitchCase="true">Your turn</p>
-    <p *ngSwitchCase="false">Opponent's turn</p>
+<div style="display: flex; justify-content: space-between;">
+    <div>
+        <div [ngSwitch]="turn">
+            <p *ngSwitchCase="true">Your turn</p>
+            <p *ngSwitchCase="false">Opponent's turn</p>
+        </div>
+        <app-roller 
+            *appUnless="elements.length >= 7"
+            (elementCreated)="onElementCreated($event)"
+        ></app-roller>
+        <app-die 
+            *ngFor="let ele of elements"
+            [element]="ele"
+        ></app-die>
+    </div>
+    <div>
+        <app-wish-ui></app-wish-ui>
+        Index <input [(ngModel)]="index"> <br/>
+        Status <input [(ngModel)]="updatedStatus"> <br/>
+        <button (click)="onUpdatePlayer()">Update</button>
+        <app-players *ngFor="let acc of accounts" [player]="acc"></app-players>
+    </div>
 </div>
-<app-roller 
-    *appUnless="elements.length >= 7"
-    (elementCreated)="onElementCreated($event)"
-></app-roller>
-<app-die 
-    *ngFor="let ele of elements"
-    [element]="ele"
-></app-die>
+

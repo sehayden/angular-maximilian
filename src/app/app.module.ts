@@ -14,6 +14,10 @@ import { RollerComponent } from './databinding/roller/roller.component';
 import { BasicHighlightDirective } from './directive/basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './directive/better-highlight/better-highlight.directive';
 import { UnlessDirective } from './directive/unless/unless.directive';
+import { PlayersComponent } from './databinding/players/players/players.component';
+import { WishService } from './services/wish/wish.service';
+import { WishUiComponent } from './databinding/wish-ui/wish-ui/wish-ui.component';
+import { LogginService } from './services/logging/logging.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,15 @@ import { UnlessDirective } from './directive/unless/unless.directive';
     RollerComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    PlayersComponent,
+    WishUiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [WishService, LogginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
